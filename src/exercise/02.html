@@ -18,12 +18,25 @@
     // element.className = 'container' // 💰 in React, this is also called the "className" prop
     // This is similar to ReactDOM.render
     // rootElement.append(element)
-    const elementType = 'div'
-    const elementProps = {className: 'container', children: 'Hello World'}
-    const reactElement = React.createElement(elementType, elementProps)
+    // const elementType = 'div'
+    // const elementProps = {className: 'container', children: 'Hello World'}
+    // const reactElement = React.createElement(elementType, elementProps)
 
-    ReactDOM.render(reactElement, rootElement)
+    // ReactDOM.render(reactElement, rootElement)
 
+    ///////////////////////////////////
+    const helloElement = React.createElement('span', {}, 'Hello ')
+    const worldElement = React.createElement('span', {}, 'World')
+    const element = React.createElement(
+      'div',
+      {
+        className: 'container',
+      },
+      helloElement,
+      worldElement,
+    )
+
+    ReactDOM.render(element, rootElement)
     // 🐨 Please re-implement the regular document.createElement code above
     // with these React API calls
     // 💰 The example in the markdown file should be a good hint for you.
