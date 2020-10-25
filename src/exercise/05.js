@@ -38,8 +38,9 @@ const largeBox = (
 )
 
 // extra credit
-function Box(props) {
-  return <div {...props} />
+function Box({size, className = '', ...props}) {
+  const boxSize = size ? `box--${size}` : ''
+  return <div className={`${className} ${boxSize}`} {...props} />
 }
 
 function App() {
@@ -49,7 +50,8 @@ function App() {
       {mediumBox}
       {largeBox}
       <Box
-        className="box box--small"
+        size="medium"
+        className="box"
         style={{backgroundColor: 'lightblue', fontStyle: 'italic'}}
       >
         small lightblue box
